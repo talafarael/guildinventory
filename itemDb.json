@@ -1,0 +1,324 @@
+{
+  "items": [
+    {
+      "id": 41,
+      "name": "Helm of the Fallen Hero",
+      "sell": 500,
+      "stack": 1,
+      "obtainedBy": "dropped by mob",
+      "dropChance": 0.03
+    },
+    {
+      "id": 42,
+      "name": "Phoenix Feather",
+      "sell": 90,
+      "stack": 10,
+      "obtainedBy": "sold by vendor",
+      "buyPrice": 180
+    },
+    {
+      "id": 43,
+      "name": "Blade of the Night",
+      "sell": 650,
+      "stack": 1,
+      "obtainedBy": "dropped by mob",
+      "dropChance": 0.02
+    },
+    {
+      "id": 44,
+      "name": "Potion of Mana",
+      "sell": 30,
+      "stack": 20,
+      "obtainedBy": "sold by vendor",
+      "buyPrice": 60
+    },
+    {
+      "id": 45,
+      "name": "Crown of the Ice Queen",
+      "sell": 800,
+      "stack": 1,
+      "obtainedBy": "dropped by mob",
+      "dropChance": 0.01
+    },
+    {
+      "id": 46,
+      "name": "Ancient Tome",
+      "sell": 150,
+      "stack": 1,
+      "obtainedBy": "dropped by mob",
+      "dropChance": 0.08
+    },
+    {
+      "id": 47,
+      "name": "Ruby Pendant",
+      "sell": 275,
+      "stack": 1,
+      "obtainedBy": "sold by vendor",
+      "buyPrice": 550
+    },
+    {
+      "id": 48,
+      "name": "Greaves of the War God",
+      "sell": 450,
+      "stack": 1, 
+      "obtainedBy": "dropped by mob",
+      "dropChance": 0.04
+    },
+    {
+      "id": 49,
+      "name": "Elixir of the Eagle",
+      "sell": 70,
+      "stack": 10, 
+      "obtainedBy": "sold by vendor",
+      "buyPrice": 140
+    },
+    {
+      "id": 50,
+      "name": "Crystalized Fire",
+      "sell": 300,
+      "stack": 5,
+      "obtainedBy": "dropped by mob",
+      "dropChance": 0.06
+    },
+    {
+      "id": 51,
+      "name": "Ring of the Shadow",
+      "sell": 425,
+      "stack": 1,
+      "obtainedBy": "dropped by mob",
+      "dropChance": 0.05
+    },
+    {
+      "id": 52,
+      "name": "Scroll of Wisdom",
+      "sell": 60,
+      "stack": 20,
+      "obtainedBy": "sold by vendor",
+      "buyPrice": 120
+    },
+    {
+      "id": 53,
+      "name": "Vial of Mystic Water",
+      "sell": 25,
+      "stack": 10,
+      "obtainedBy": "sold by vendor",
+      "buyPrice": 50
+    },
+    {
+      "id": 54,
+      "name": "Tunic of the Wild Hunt",
+      "sell": 510,
+      "stack": 1,
+      "obtainedBy": "dropped by mob",
+      "dropChance": 0.03
+    },
+    {
+      "id": 55,
+      "name": "Sapphire Gem",
+      "sell": 150,
+      "stack": 5,
+      "obtainedBy": "sold by vendor",
+      "buyPrice": 300
+    },
+    {
+      "id": 56,
+      "name": "Gladiator's Blade",
+      "sell": 700,
+      "stack": 1,
+      "obtainedBy": "dropped by mob",
+      "dropChance": 0.02
+    },
+    {
+      "id": 57,
+      "name": "Band of the Serpent",
+      "sell": 85,
+      "stack": 1,
+      "obtainedBy": "sold by vendor",
+      "buyPrice": 170
+    },
+    {
+      "id": 58,
+      "name": "Mantle of the Storm",
+      "sell": 250,
+      "stack": 1,
+      "obtainedBy": "dropped by mob",
+      "dropChance": 0.07
+    },
+    {
+      "id": 59,
+      "name": "Heart of the Mountain",
+      "sell": 1200,
+      "stack": 1,
+      "obtainedBy": "dropped by mob",
+      "dropChance": 0.01
+    },
+    {
+      "id": 60,
+      "name": "Ring of the Ancients",
+      "sell": 375,
+      "stack": 1,
+      "obtainedBy": "dropped by mob",
+      "dropChance": 0.05
+    },
+    {
+      "id": 21,
+      "name": "Gloves of the Berserker",
+      "sell": 130,
+      "stack": 1,
+      "obtainedBy": "dropped by mob",
+      "dropChance": 0.15
+    },
+    {
+      "id": 22,
+      "name": "Ring of Eternal Life",
+      "sell": 220,
+      "stack": 1,
+      "obtainedBy": "dropped by mob",
+      "dropChance": 0.1
+    },
+    {
+      "id": 23,
+      "name": "Crystal of the Depths",
+      "sell": 75,
+     "stack": 3,
+      "obtainedBy": "sold by vendor",
+      "buyPrice": 150
+    },
+    {
+      "id": 24,
+      "name": "Horn of the Storm",
+      "sell": 310,
+      "stack": 1,
+      "obtainedBy": "dropped by mob",
+      "dropChance": 0.05
+    },
+    {
+      "id": 25,
+      "name": "Potion of Speed",
+      "sell": 40,
+     "stack": 20,
+      "obtainedBy": "sold by vendor",
+      "buyPrice": 80
+    },
+    {
+      "id": 26,
+      "name": "Shard of Ice",
+      "sell": 90,
+     "stack": 10,
+      "obtainedBy": "dropped by mob",
+      "dropChance": 0.18
+    },
+    {
+      "id": 27,
+      "name": "Spear of the Thunder King",
+      "sell": 350,
+      "stack": 1,
+      "obtainedBy": "dropped by mob",
+      "dropChance": 0.04
+    },
+    {
+      "id": 28,
+      "name": "Gem of Vitality",
+      "sell": 115,
+      "stack": 5,
+      "obtainedBy": "sold by vendor",
+      "buyPrice": 230
+    },
+    {
+      "id": 29,
+      "name": "Scroll of Flames",
+      "sell": 60,
+     "stack": 50,
+      "obtainedBy": "sold by vendor",
+      "buyPrice": 120
+    },
+    {
+      "id": 30,
+      "name": "Wand of the Arcane",
+      "sell": 275,
+      "stack": 1,
+      "obtainedBy": "dropped by mob",
+      "dropChance": 0.06
+    },
+    {
+      "id": 31,
+      "name": "Elixir of Protection",
+      "sell": 55,
+     "stack": 10,
+      "obtainedBy": "sold by vendor",
+      "buyPrice": 110
+    },
+    {
+      "id": 32,
+      "name": "Boots of the Windrunner",
+      "sell": 145,
+      "stack": 1,
+      "obtainedBy": "dropped by mob",
+      "dropChance": 0.12
+    },
+    {
+      "id": 33,
+      "name": "Talisman of the Wild",
+      "sell": 120,
+      "stack": 1,
+      "obtainedBy": "dropped by mob",
+      "dropChance": 0.14
+    },
+    {
+      "id": 34,
+      "name": "Orb of the Fallen",
+      "sell": 500,
+      "stack": 1,
+      "obtainedBy": "dropped by mob",
+      "dropChance": 0.02
+    },
+    {
+      "id": 35,
+      "name": "Crown of the Emperor",
+      "sell": 600,
+      "stack": 1,
+      "obtainedBy": "sold by vendor",
+      "buyPrice": 1200
+    },
+    {
+      "id": 36,
+      "name": "Sash of the Phoenix",
+      "sell": 80,   
+         "stack": 1,
+      "obtainedBy": "sold by vendor",
+      "buyPrice": 160
+    },
+    {
+      "id": 37,
+      "name": "Vial of Pure Water",
+      "sell": 25,    
+        "stack": 10,
+      "obtainedBy": "sold by vendor",
+      "buyPrice": 50
+    },
+    {
+      "id": 38,
+      "name": "Sigil of the Raven",
+      "sell": 450,
+      "stack": 1,
+      "obtainedBy": "dropped by mob",
+      "dropChance": 0.03
+    },
+    {
+      "id": 39,
+      "name": "Cloak of the Void",
+      "sell": 240,
+      "stack": 1,
+      "obtainedBy": "dropped by mob",
+      "dropChance": 0.08
+    },
+    {
+      "id": 40,
+      "name": "Bracers of Eternity",
+      "sell": 160,
+      "stack": 1,
+      "obtainedBy": "dropped by mob",
+      "dropChance": 0.1
+    }
+  ]
+}

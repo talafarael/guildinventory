@@ -1,23 +1,64 @@
 [
-     {
-          "inventory": "[]",
-          "name": "r",
-          "password": "jhon"
-     },
-     {
-          "inventory": "[]",
-          "name": "jghon",
-          "password": "f"
-     },
-     {
-          "inventory": "[]",
-          "name": "juser",
-          "password": "gg"
-     },
-     {
-          "inventory": "[]",
-          "name": "jhon",
-          "password": "ff"
-     }
-
+  {
+    "inventory": [
+      {
+        "count": 0,
+        "id": 0
+      },
+      {
+        "count": 0,
+        "id": 0
+      },
+      {
+        "count": 0,
+        "id": 0
+      },
+      {
+        "count": 0,
+        "id": 0
+      },
+      {
+        "count": 0,
+        "id": 0
+      },
+      {
+        "count": 0,
+        "id": 0
+      },
+      {
+        "count": 0,
+        "id": 0
+      },
+      {
+        "count": 0,
+        "id": 0
+      },
+      {
+        "count": 0,
+        "id": 0
+      },
+      {
+        "count": 0,
+        "id": 0
+      },
+      {
+        "count": 0,
+        "id": 0
+      },
+      {
+        "count": 0,
+        "id": 0
+      },
+      {
+        "count": 0,
+        "id": 0
+      },
+      {
+        "count": 0,
+        "id": 0
+      }
+    ],
+    "name": "jhon",
+    "password": "jon"
+  }
 ]
