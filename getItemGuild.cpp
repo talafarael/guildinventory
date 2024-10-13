@@ -5,6 +5,7 @@
 #include "json.hpp"
 #include "getFileContent.h" 
 #include "findItemId.h"
+#include "dataMatrixInput.h"
 void getItemGuild(nlohmann::json& UserData){
     
    std::string GuildInventoryString= getFileContent("GildInventory.json");
@@ -14,23 +15,17 @@ void getItemGuild(nlohmann::json& UserData){
    nlohmann::json Users=nlohmann::json::parse(UsersString);
     int freeCell;
     int freeCellCount;
-    int row;
-    int column;
-    int count;
-    std::cout<<"plese enter Row:";
-    std::cin>>row;
-    std::cout<<"plese enter Column:";
-    std::cin>>column;
-    std::cout<<"enter count";
-    std::cin>>count;
-    int id=GuildInventory["inventory"][row][column]["id"];
+    int column,row ,count;
+    
+   dataMatrixInput( column, row, count);
+    int id=GuildInventory["inventory"][column][row]["id"];
     if(id==0){
         std::cout<<"empty cell";
         return;
     }
     nlohmann::json item= findItemId(id);
     
-    if(count> GuildInventory["inventory"][row][column]["count"]){
+    if(count> GuildInventory["inventory"][column][row]["count"]){
         std::cout<<"you get so more plase get less";
         return;
     }
@@ -51,7 +46,7 @@ void getItemGuild(nlohmann::json& UserData){
       }
 }
 if(freeCellCount<count&&freeCell==0){
-  std::cout<<"you dont have free cell";
+  std::cout<<"you dont have free cell"<<std::endl;
   return;
 } 
 
@@ -69,15 +64,14 @@ for(int i=0;i<UserData["inventory"].size();i++){
       }
       
       if(UserData["inventory"][i]["count"].get<int>()+count<=item["stack"].get<int>()){
-        std::cout<<"Suka";
           UserData["inventory"][i]["count"]=UserData["inventory"][i]["count"].get<int>()+count;
-         GuildInventory["inventory"][row][column]["count"]=GuildInventory["inventory"][row][column]["count"].get<int>()-count;
+         GuildInventory["inventory"][column][row]["count"]=GuildInventory["inventory"][column][row]["count"].get<int>()-count;
         count =0;
         break;
       }else{
         int  freeCount= item["stack"].get<int>() - UserData["inventory"][i]["count"].get<int>();
         count =count -freeCount;
-        GuildInventory["inventory"][row][column]["count"]=GuildInventory["inventory"][row][column]["count"].get<int>()-freeCount;;
+        GuildInventory["inventory"][column][row]["count"]=GuildInventory["inventory"][column][row]["count"].get<int>()-freeCount;;
         UserData["inventory"][i]["count"]=item["stack"].get<int>();
       }
     }
@@ -89,14 +83,14 @@ for(int i=0;i<UserData["inventory"].size();i++){
    if(cell==0){
      UserData["inventory"][i]["id"]=id;
       UserData["inventory"][i]["count"]=count;
-      GuildInventory["inventory"][row][column]["count"]=GuildInventory["inventory"][row][column]["count"].get<int>()-count;
+      GuildInventory["inventory"][column][row]["count"]=GuildInventory["inventory"][column][row]["count"].get<int>()-count;
       count=0;
       break;
 }
 }  
 }
-if(GuildInventory["inventory"][row][column]["count"]==0){
-GuildInventory["inventory"][row][column]["id"]=0;
+if(GuildInventory["inventory"][column][row]["count"]==0){
+GuildInventory["inventory"][column][row]["id"]=0;
 }
 
  std::ofstream file("GildInventory.json");

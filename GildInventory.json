@@ -2,38 +2,38 @@
      "inventory": [
           [
                {
-                    "count": 1,
-                    "id": 41
+                    "count": 3,
+                    "id": 44
                },
                {
-                    "count": 0,
-                    "id": 0
+                    "count": 20,
+                    "id": 44
                },
                {
-                    "count": 0,
-                    "id": 0
+                    "count": 19,
+                    "id": 44
                },
                {
-                    "count": 0,
-                    "id": 0
+                    "count": 17,
+                    "id": 44
                },
                {
-                    "count": 1,
-                    "id": 43
+                    "count": 17,
+                    "id": 44
                },
                {
-                    "count": 0,
-                    "id": 0
+                    "count": 17,
+                    "id": 44
                },
                {
-                    "count": 0,
-                    "id": 0
+                    "count": 17,
+                    "id": 44
                }
           ],
           [
                {
-                    "count": 0,
-                    "id": 0
+                    "count": 1,
+                    "id": 43
                },
                {
                     "count": 0,

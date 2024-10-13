@@ -7,7 +7,9 @@
 #include "guildBankSession.h"
 #include "seeGuildBank.h"
 #include "getItemGuild.h" 
+#include "getItemUser.h"
 #include "getFileContent.h" 
+#include "putItem.h"
 using json = nlohmann::json;
 
 struct Inventory {
@@ -57,12 +59,11 @@ char choiceAction();
 
 int main(){
 
-  
 
 // std::string usersData=getFileContent("user.json");
 //  json j =json::parse(usersData);
 startSession();
-std::cout<<UserData;
+
 
 
 getGuildInventory();
@@ -80,6 +81,10 @@ for(;;){
  char actionGuild = guildBankSession();
   if(actionGuild=='g'){
    getItemGuild(UserData);
+  }
+  if(actionGuild=='p'){
+    getItemUser(UserData);
+    putItem(UserData);
   }
 }
 }
@@ -140,7 +145,7 @@ GuildInventoryJson= newInventory.dump();
 }
 GuildInventory =json::parse(GuildInventoryJson);
 }
-void createJson(std::string fileName){
+void createJson(std::string &fileName){
     std::ofstream file(fileName);
    json jsonFile=json::object();
    file<<jsonFile.dump(4);
