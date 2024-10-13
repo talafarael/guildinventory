@@ -1,64 +1,64 @@
 [
-  {
-    "inventory": [
-      {
-        "count": 0,
-        "id": 0
-      },
-      {
-        "count": 0,
-        "id": 0
-      },
-      {
-        "count": 0,
-        "id": 0
-      },
-      {
-        "count": 0,
-        "id": 0
-      },
-      {
-        "count": 0,
-        "id": 0
-      },
-      {
-        "count": 0,
-        "id": 0
-      },
-      {
-        "count": 0,
-        "id": 0
-      },
-      {
-        "count": 0,
-        "id": 0
-      },
-      {
-        "count": 0,
-        "id": 0
-      },
-      {
-        "count": 0,
-        "id": 0
-      },
-      {
-        "count": 0,
-        "id": 0
-      },
-      {
-        "count": 0,
-        "id": 0
-      },
-      {
-        "count": 0,
-        "id": 0
-      },
-      {
-        "count": 0,
-        "id": 0
-      }
-    ],
-    "name": "jhon",
-    "password": "jon"
-  }
+     {
+          "inventory": [
+               {
+                    "count": 1,
+                    "id": 43
+               },
+               {
+                    "count": 1,
+                    "id": 43
+               },
+               {
+                    "count": 20,
+                    "id": 44
+               },
+               {
+                    "count": 20,
+                    "id": 44
+               },
+               {
+                    "count": 0,
+                    "id": 0
+               },
+               {
+                    "count": 0,
+                    "id": 0
+               },
+               {
+                    "count": 0,
+                    "id": 0
+               },
+               {
+                    "count": 0,
+                    "id": 0
+               },
+               {
+                    "count": 0,
+                    "id": 0
+               },
+               {
+                    "count": 0,
+                    "id": 0
+               },
+               {
+                    "count": 0,
+                    "id": 0
+               },
+               {
+                    "count": 0,
+                    "id": 0
+               },
+               {
+                    "count": 0,
+                    "id": 0
+               },
+               {
+                    "count": 0,
+                    "id": 0
+               }
+          ],
+          "name": "jhon",
+          "password": "jon"
+     }
 ]
