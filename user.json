@@ -2,32 +2,32 @@
      {
           "inventory": [
                {
-                    "count": 2,
+                    "count": 20,
                     "id": 44
+               },
+               {
+                    "count": 0,
+                    "id": 0
                },
                {
                     "count": 1,
                     "id": 43
                },
                {
-                    "count": 0,
-                    "id": 0
-               },
-               {
-                    "count": 20,
+                    "count": 16,
                     "id": 44
                },
                {
-                    "count": 1,
-                    "id": 41
+                    "count": 5,
+                    "id": 44
                },
                {
-                    "count": 0,
-                    "id": 0
+                    "count": 8,
+                    "id": 44
                },
                {
-                    "count": 0,
-                    "id": 0
+                    "count": 4,
+                    "id": 44
                },
                {
                     "count": 0,
@@ -59,6 +59,7 @@
                }
           ],
           "name": "jhon",
-          "password": "jon"
+          "password": "jon",
+          "gold":1000000
      }
 ]

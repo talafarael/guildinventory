@@ -10,6 +10,9 @@
 #include "getItemUser.h"
 #include "getFileContent.h" 
 #include "putItem.h"
+#include "getITemVendor.h"
+#include "vendorSession.h"
+#include "seeVendorStore.h"
 using json = nlohmann::json;
 
 struct Inventory {
@@ -74,7 +77,7 @@ getItemId();
 for(;;){
   char action=choiceAction();
 
-  if(action='s'){
+  if(action=='s'){
 
  seeGuildBank(GuildInventory, ItemDb);
 for(;;){
@@ -86,8 +89,27 @@ for(;;){
     getItemUser(UserData);
     putItem(UserData);
   }
+   if(actionGuild=='e'){
+     break;
+  }
 }
 }
+if(action=='v'){
+  
+  std::cout<<"AA";
+  
+  getITemVendor();
+
+seeVendorStore();
+for(;;){
+char actionGuild = vendorSession();
+if(actionGuild=='b'){
+  
+}
+}
+}
+
+
 }
 
   // j["name"] = "Habr";
@@ -196,7 +218,8 @@ void Register() {
   nlohmann::json userJson = {
         {"name", user.name},
         {"password", user.password},
-        {"inventory", nlohmann::json::array()}
+        {"inventory", nlohmann::json::array()},
+        {"gold",0}
     };
     for(int i=0;i<14;i++){
       userJson["inventory"].push_back({
@@ -245,6 +268,7 @@ char choiceAction(){
       std::cout<<"if you want send yout person in to hunt press g and after that you can't play perform the action for at least an hour"<<std::endl;
   std::cin>>Action;
   if(Action=='s'||Action=='v'||Action=='g') {
+    std::cout<<Action;
     return  Action;
   }
  

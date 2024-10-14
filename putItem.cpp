@@ -5,7 +5,9 @@
 #include "findItemId.h"
 #include <fstream>
 #include "getFileContent.h" 
+#include "saveUser.h"
 void checkCell();
+bool checkFreeCellInGUilBank(nlohmann::json& GuildInventory,nlohmann::json& item,int& freeCell,int& count,int&  CellCount,int& id);
 void putItem(nlohmann::json& UserData){
  std::string GuildInventoryString= getFileContent("GildInventory.json");
  std::string UsersString= getFileContent("user.json");
@@ -26,57 +28,44 @@ void putItem(nlohmann::json& UserData){
         std::cout<<"you get so more plase get less";
         return;
     }
-    for(int i=0;i<GuildInventory["inventory"].size();i++){
-        for(int j=0;j<GuildInventory["inventory"][i].size();j++){
-        
-            if(GuildInventory["inventory"][i][j]["id"]==0){
-                freeCell++;
-                continue;
-            }
-        if(GuildInventory["inventory"][i][j]["id"]==id){
-        if(GuildInventory["inventory"][i][j]["count"].get<int>()+count<=item["stack"].get<int>()){
-            GuildInventory["inventory"][i][j][count]+=count;
-            freeCell++;
-            count=0;
-            break;
-        }else{
-          CellCount+= item["stack"].get<int>()-GuildInventory["inventory"][i][j]["count"].get<int>();
-        }
-     }
-
-    } 
-    }
-    if(freeCell==0 &&freeCell<count){
-         std::cout<<"guild bank dont have free cell"<<std::endl;
-  return;
-    }
-    if(freeCell>0&&count>0){
+ 
+bool error=checkFreeCellInGUilBank(GuildInventory, item, freeCell, count, CellCount, id);
+if(!error){
+    return;
+}
 
 
+
+if(freeCell>0&&count>0){
  for(int i=0;i<GuildInventory["inventory"].size();i++){ 
     if(count==0){
        break;
     }
-        for(int j=0;j<GuildInventory["inventory"][i].size();j++){
+    for(int j=0;j<GuildInventory["inventory"][i].size();j++){
             if(GuildInventory["inventory"][i][j]["id"]==0){
                continue;
             }
 
 if(GuildInventory["inventory"][i][j]["id"]==id){
-    if(GuildInventory["inventory"][i][j]["count"].get<int>()+count<=item["stack"]){
-        
-            GuildInventory["inventory"][i][j]["count"]=GuildInventory["inventory"][i][j]["count"].get<int>()+count;
+    int GuildInventoryCount=GuildInventory["inventory"][i][j]["count"].get<int>()+count;
+
+
+    if(GuildInventoryCount<=item["stack"]){
+            GuildInventory["inventory"][i][j]["count"]=GuildInventoryCount;
+            std::cout<<GuildInventoryCount;
             count=0;
             break;
         }else{
+
         int countFree=item["stack"].get<int>()-GuildInventory["inventory"][i][j]["count"].get<int>();
-        
         count=count-countFree;
         GuildInventory["inventory"][i][j]["count"]=item["stack"].get<int>();
 }
 
-        }
-        }
+
+
+}
+}
     }
 }
 
@@ -95,34 +84,68 @@ if(GuildInventory["inventory"][i][j]["id"].get<int>()==0){
       break;
 }
 
-        }}
+}}
 }
 
-
-if(UserData["inventory"][column*7+row]["count"].get<int>()-countItem==0){
+int countUserLast=UserData["inventory"][column*7+row]["count"].get<int>()-countItem;
+if(countUserLast==0){
     UserData["inventory"][column*7+row]["count"]=0;
     UserData["inventory"][column*7+row]["id"]=0;
 }else{
-     UserData["inventory"][column*7+row]["count"]=UserData["inventory"][column*7+row]["count"].get<int>()-countItem;
+     UserData["inventory"][column*7+row]["count"]=countUserLast;
 }
+
+
  std::ofstream file("GildInventory.json");
   if (file.is_open()) {
         file << GuildInventory.dump(5); 
         file.close(); 
     } 
    std::cout<<"user goi";
-for(int i=0;i<Users[i].size();i++){
-  if(!Users[i].is_null() && Users[i]["name"].get<std::string>()==UserData["name"].get<std::string>()){
-     Users[i]["inventory"]=UserData["inventory"];
-  break;
-  }
+
+
+
+
+saveUser(UserData);
 }
- std::ofstream fileUser("user.json");
-  if (fileUser.is_open()) {
-        fileUser << Users.dump(5); 
-        fileUser.close(); 
+
+
+
+
+
+bool checkFreeCellInGUilBank(nlohmann::json& GuildInventory,nlohmann::json& item,int& freeCell,int& count,int&  CellCount,int& id){
+  for(int i=0;i<GuildInventory["inventory"].size();i++){
+        for(int j=0;j<GuildInventory["inventory"][i].size();j++){
+        
+            if(GuildInventory["inventory"][i][j]["id"]==0){
+                freeCell++;
+                continue;
+            }
+        if(GuildInventory["inventory"][i][j]["id"]==id){
+            int GuildInventoryCount=GuildInventory["inventory"][i][j]["count"].get<int>()+count;
+        if(GuildInventoryCount==item["stack"].get<int>()){
+           
+            GuildInventory["inventory"][i][j]["count"]=GuildInventoryCount;
+            freeCell++;
+            count=0;
+            break;
+        }
+        if(GuildInventoryCount<item["stack"].get<int>()){
+            // GuildInventory["inventory"][i][j][count]=GuildInventoryCount;
+          
+            // count=0;
+            CellCount+= item["stack"].get<int>()-GuildInventory["inventory"][i][j]["count"].get<int>();
+           
+        }else{
+          CellCount+= item["stack"].get<int>()-GuildInventory["inventory"][i][j]["count"].get<int>();
+        }
+     }
+
     } 
-   
-
-
+    }
+    if(freeCell==0 &&freeCell<count){
+         std::cout<<"guild bank dont have free cell"<<std::endl;
+  return false;
+    }
+    return true;
 }

@@ -20,7 +20,7 @@ void seeGuildBank(nlohmann::json& GuildInventory,nlohmann::json& ItemDb  ){
     //  item.obtainedBy = ItemDb["obtainedBy"][y];
 
   std::cout << "Item: " << ItemDb["items"][y]["name"].get<std::string>()
-                          << " | Count: " << GuildInventory["inventory"][i][j]["count"].get<int>();
+                          << " | Count: " << GuildInventory["inventory"][i][j]["count"].get<int>()<<std::endl;
 
 
     }
