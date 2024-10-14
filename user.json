@@ -1,13 +1,14 @@
 [
      {
+          "gold": 1550,
           "inventory": [
-               {
-                    "count": 20,
-                    "id": 44
-               },
                {
                     "count": 0,
                     "id": 0
+               },
+               {
+                    "count": 1,
+                    "id": 36
                },
                {
                     "count": 1,
@@ -30,12 +31,12 @@
                     "id": 44
                },
                {
-                    "count": 0,
-                    "id": 0
+                    "count": 1,
+                    "id": 47
                },
                {
-                    "count": 0,
-                    "id": 0
+                    "count": 3,
+                    "id": 53
                },
                {
                     "count": 0,
@@ -59,7 +60,6 @@
                }
           ],
           "name": "jhon",
-          "password": "jon",
-          "gold":1000000
+          "password": "jon"
      }
 ]

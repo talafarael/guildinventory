@@ -13,6 +13,8 @@
 #include "getITemVendor.h"
 #include "vendorSession.h"
 #include "seeVendorStore.h"
+#include "buyItem.h"
+#include "sellItem.h"
 using json = nlohmann::json;
 
 struct Inventory {
@@ -104,7 +106,11 @@ seeVendorStore();
 for(;;){
 char actionGuild = vendorSession();
 if(actionGuild=='b'){
-  
+buyItem(UserData);
+}
+if(actionGuild=='s'){
+   getItemUser(UserData);
+   sellItem(UserData);
 }
 }
 }
