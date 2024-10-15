@@ -13,6 +13,10 @@ void saveUser(nlohmann::json& UserData){
   if(!Users[i].is_null() && Users[i]["name"].get<std::string>()==UserData["name"].get<std::string>()){
      Users[i]["inventory"]=UserData["inventory"];
       Users[i]["gold"]=UserData["gold"];
+      Users[i]["stateHunt"]= UserData["stateHunt"];
+     Users[i]["huntDrop"][0]["id"]=UserData["huntDrop"][0]["id"];
+Users[i]["huntDrop"][0]["count"]= UserData["huntDrop"][0]["count"];
+Users[i]["stateHunt"]=UserData["stateHunt"];
   break;
   }
 }

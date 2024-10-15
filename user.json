@@ -1,10 +1,16 @@
 [
      {
-          "gold": 1550,
-          "inventory": [
+          "gold": 1000,
+          "huntDrop": [
                {
                     "count": 0,
                     "id": 0
+               }
+          ],
+          "inventory": [
+               {
+                    "count": 1,
+                    "id": 24
                },
                {
                     "count": 1,
@@ -15,11 +21,11 @@
                     "id": 43
                },
                {
-                    "count": 16,
+                    "count": 20,
                     "id": 44
                },
                {
-                    "count": 5,
+                    "count": 1,
                     "id": 44
                },
                {
@@ -37,6 +43,76 @@
                {
                     "count": 3,
                     "id": 53
+               },
+               {
+                    "count": 47,
+                    "id": 47
+               },
+               {
+                    "count": 1,
+                    "id": 21
+               },
+               {
+                    "count": 0,
+                    "id": 0
+               },
+               {
+                    "count": 0,
+                    "id": 0
+               },
+               {
+                    "count": 0,
+                    "id": 0
+               }
+          ],
+          "name": "jhon",
+          "password": "jon",
+          "stateHunt": 0
+     },
+     {
+          "gold": 0,
+          "huntDrop": [
+               {
+                    "count": 0,
+                    "id": 0
+               }
+          ],
+          "inventory": [
+               {
+                    "count": 0,
+                    "id": 0
+               },
+               {
+                    "count": 0,
+                    "id": 0
+               },
+               {
+                    "count": 0,
+                    "id": 0
+               },
+               {
+                    "count": 0,
+                    "id": 0
+               },
+               {
+                    "count": 0,
+                    "id": 0
+               },
+               {
+                    "count": 0,
+                    "id": 0
+               },
+               {
+                    "count": 0,
+                    "id": 0
+               },
+               {
+                    "count": 0,
+                    "id": 0
+               },
+               {
+                    "count": 0,
+                    "id": 0
                },
                {
                     "count": 0,
@@ -60,6 +136,7 @@
                }
           ],
           "name": "jhon",
-          "password": "jon"
+          "password": "johnes",
+          "stateHunt": 0
      }
 ]

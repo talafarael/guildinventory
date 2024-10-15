@@ -3,7 +3,7 @@
 #include "dataMatrixInput.h"
 #include "findItemId.h"
 #include "saveUser.h"
-bool confirmation();
+#include "confirmation.h"
 void sellItem(nlohmann::json& UserData){
      int column,row ,count;
 
@@ -28,13 +28,3 @@ void sellItem(nlohmann::json& UserData){
    saveUser(UserData);
 }
 
-bool confirmation(){
- std::cout<<"are you sure"<<std::endl;
- std::cout<<"if yes enter y"<<std::endl;
- char action;
- std::cin>>action;
- if(action=='y'){
-    return false;
- }
-  return true;
-}

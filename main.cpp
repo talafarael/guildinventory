@@ -14,7 +14,12 @@
 #include "vendorSession.h"
 #include "seeVendorStore.h"
 #include "buyItem.h"
+#include "huntSession.h"
 #include "sellItem.h"
+#include "sendTohunt.h"
+#include "checkUserTimeHunt.h"
+#include "addDropAfterHunt.h"
+#include "getItemAfterHunter.h"
 using json = nlohmann::json;
 
 struct Inventory {
@@ -64,7 +69,7 @@ char choiceAction();
 
 int main(){
 
-
+bool end=false;
 // std::string usersData=getFileContent("user.json");
 //  json j =json::parse(usersData);
 startSession();
@@ -76,12 +81,12 @@ getItemId();
 
 
 
-for(;;){
+while(!end){
   char action=choiceAction();
-
-  if(action=='s'){
-
+ if(action=='s'){
  seeGuildBank(GuildInventory, ItemDb);
+
+ //guild
 for(;;){
  char actionGuild = guildBankSession();
   if(actionGuild=='g'){
@@ -96,13 +101,13 @@ for(;;){
   }
 }
 }
-if(action=='v'){
-  
-  std::cout<<"AA";
-  
-  getITemVendor();
 
+
+//vendor
+if(action=='v'){
+getITemVendor();
 seeVendorStore();
+
 for(;;){
 char actionGuild = vendorSession();
 if(actionGuild=='b'){
@@ -112,10 +117,40 @@ if(actionGuild=='s'){
    getItemUser(UserData);
    sellItem(UserData);
 }
+if(actionGuild=='e'){
+     break;
+  }
 }
 }
 
 
+
+
+//hunt
+if(action=='g'){
+
+for(;;){
+char actionHunt=huntSession();
+if(actionHunt=='g'){
+
+if(sendTohunt(UserData)){
+  end=true;
+  break;
+}
+}
+if(actionHunt=='t'){
+
+  addDropAfterHunt(UserData);
+ getItemAfterHunter(UserData);
+}
+if(actionHunt=='e'){
+
+    break;
+  }
+
+}
+
+}
 }
 
   // j["name"] = "Habr";
@@ -225,10 +260,18 @@ void Register() {
         {"name", user.name},
         {"password", user.password},
         {"inventory", nlohmann::json::array()},
-        {"gold",0}
+        {"gold",0},
+        {"stateHunt",0},
+        {"huntDrop", nlohmann::json::array()},
     };
     for(int i=0;i<14;i++){
       userJson["inventory"].push_back({
+          {"id", 0},
+            {"count", 0}
+      });
+    }
+     for(int i=0;i<1;i++){
+      userJson["huntDrop"].push_back({
           {"id", 0},
             {"count", 0}
       });
@@ -248,6 +291,7 @@ void Login() {
   std::string name;
 std::string password;
   bool stateLogin=false;
+  bool stateHunt=true;
   std::cout<<"enter username"<<std::endl;
   std::cin >> name;
     std::cin >> password;
@@ -256,13 +300,23 @@ std::string password;
      
     UserData=j[i];
     stateLogin=true;
+    int time=j[i]["stateHunt"].get<int>();
+    if(time!=0){
+     stateHunt= checkUserTimeHunt(time);
+    }
   }
+}
+if(!stateHunt){
+  std::cout<<"your hero still in the hunter please back letter"<<std::endl;
+  Login();
+  return;
 }
  if(!stateLogin){
   std::cout<<"login or password don't exist"<<std::endl;
   Login();
   return;
  }
+ 
  std::cout<<"you entered in your account"<<std::endl;
 }
 

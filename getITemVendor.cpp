@@ -6,9 +6,9 @@
 #include <string>
 #include <chrono>
 #include <ctime>  
-const int THREE_HOURS_IN_SECONDS = 3 * 3600;
+const int THREE_HOURS_IN_SECONDS = 3600;
 void getITemVendor(){
-    std::cout<<"AA";
+   
     std::string type="sold by vendor";
     int count=5;
     std::string file="VendorInventory.json";
@@ -19,6 +19,7 @@ void getITemVendor(){
       filllItem(type,count,file);
      VendorInventoryString= getFileContent("VendorInventory.json");
     }
+
     nlohmann::json  VendorInventory=nlohmann::json::parse(VendorInventoryString);
         std::time_t timeStart=VendorInventory["time"];
         auto now = std::chrono::system_clock::now();
@@ -26,6 +27,7 @@ void getITemVendor(){
 
         
         double difference = std::difftime(timeNow, timeStart);
+        std::cout<<timeNow;
         if (difference >= THREE_HOURS_IN_SECONDS) {
              filllItem(type,count,file);
              VendorInventoryString= getFileContent("VendorInventory.json");
